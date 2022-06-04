@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Multris</title>
+    </head>
+    <body>
+        <div id="container">
+            <div class="justifyTop noshrink">
+                <canvas width=140 height=140 id="reservedCanvas"></canvas>
+            </div>
+            <div class="noshrink" id="gameContainer">
+                <canvas width=300 height=600 class="gameItem" id="gameCanvas"></canvas>
+                <div class="gameItem overlay" id="nameScreen">
+                    <p class="title">Multris</p>
+                    <input type="text" placeholder="Enter Name" autofocus id="nameInput">
+                    <button id="nameSubmit">Join</button>
+                </div>
+                <div class="gameItem overlay invisible" id="hostScreen">
+                    <p class="infoText">You are the host. Press Start when all players have joined.</p>
+                    <button class="startButton" id="hostStart">Start</button>
+                </div>
+                <div class="gameItem overlay invisible" id="waitScreen">
+                    <p class="infoText">Waiting for the host to start the game...</p>
+                </div>
+                <div class="gameItem overlay invisible" id="lostScreen">
+                    <p class="infoText">You got knocked out!</p>
+                    <!--button class="startButton wideButton">Play Again</button-->
+                </div>
+                <div class="gameItem overlay invisible" id="endScreen">
+                    <p class="infoText" id="endText">
+                    </p>
+                    <button class="startButton wideButton invisible" id="hostRestart">
+                      Play Again
+                    </button>
+                </div>
+            </div>
+            <canvas width=140 height=600 class="noshrink" id="upcomingCanvas"></canvas>
+            <canvas height=600 class="noshrink" id="opponentCanvas"></canvas>
+        </div>
+    </body>
+</html>
