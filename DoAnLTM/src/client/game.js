@@ -60,6 +60,7 @@ export function getTable() {
     return table;
 }
 
+//cap nhat trang thai cua game lien tuc
 export function updateGame() {
     render();
     if(State.currState != State.PLAYING) return;
