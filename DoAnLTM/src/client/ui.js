@@ -69,13 +69,11 @@ function showWaitScreen() {
     waitScreen.classList.remove("invisible");
 }
 
-// TODO: rename for clarity
 export function hideWaitScreen() {
     waitScreen.classList.add("invisible");
     endScreen.classList.add("invisible");
 }
 
-// TODO: same as above
 function hostStartClick() {
     hostScreen.classList.add("invisible");
     endScreen.classList.add("invisible");
