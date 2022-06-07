@@ -73,8 +73,8 @@ export function updateGame() {
     }
 }
 
-// checks the table for any lines that need to be cleared
-// also checks if the game is lost
+// kiem tra xem co row nao full chua
+// cung luc, kiem tra game da ket thuc chua
 function checkTable() {
     for(let y = 0; y < 20; y++) {
         let isFullRow = true;
@@ -111,6 +111,7 @@ function getRandomType() {
     return Math.floor(randNumGen() * 7 + 1);
 }
 
+//Ham hien thi khoi tetro tiep theo
 function getNextPiece() {
     const n = upcomingTypes.shift();
     upcomingTypes.push(getRandomType());
