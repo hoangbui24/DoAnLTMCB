@@ -75,7 +75,7 @@ function keyDown(event) {
         left.setPressed(true);
         return;
     case "ArrowRight":
-    case "d""
+    case "d":
         right.setPressed(true);
         return;
     case "ArrowUp":

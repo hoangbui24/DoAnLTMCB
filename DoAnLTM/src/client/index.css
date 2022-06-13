@@ -62,7 +62,7 @@ html,body {
     margin: 30px 0px 0px 0px;
     padding: 0px;
     text-align: center;
-    font-family: monospace;
+    font-family: 'Press Start 2P', cursive;
     font-size: 60px;
     color: #00FF99;
 }
@@ -90,7 +90,7 @@ html,body {
     padding: 0px;
     border: 0px;
     text-align: center;
-    font-family: monospace;
+    font-family: 'Press Start 2P', cursive;
     font-size: 20px;
     background: #0099FF;
     color: #123;
@@ -108,7 +108,7 @@ html,body {
     padding: 0px;
     text-align: center;
     white-space: pre-line; /* for newline characters in endGame() */
-    font-family: monospace;
+    font-family: 'Press Start 2P', cursive;
     font-size: 20px;
     color: white;
 }
@@ -120,7 +120,7 @@ html,body {
     padding: 0px;
     border: 0px;
     text-align: center;
-    font-family: monospace;
+    font-family: 'Press Start 2P', cursive;
     font-size: 20px;
     background: #09F;
     color: #123;
