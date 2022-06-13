@@ -15,7 +15,7 @@ html,body {
     background: #f2f1da;
     padding: 0px 10px;
     box-sizing: border-box;
-    position: relative;
+    position: absolute;
 
 }
 
@@ -152,7 +152,10 @@ html,body {
 #opponentCanvas {
     max-width: 600px;
     height: 600px;
-    background: #292e3dff;
+    background: #123;
     border: 3px solid #33bf4bff;
     transition: all 0.25s;
 }
+
+
+
