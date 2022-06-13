@@ -7,12 +7,12 @@ const F_SIZE = 30;//full square side length
 export const S_SIZE = 13;//small square side length
 //S_SIZE is needed in ui.js for resizing the opponent canvas
 
-const SIDEBAR_BG_CLR = "#414848";
-const OPPONENT_BG_CLR = "#DDDDDD";
+const SIDEBAR_BG_CLR = "#292e3dff";
+const OPPONENT_BG_CLR = "#292e3dff";
 const TEXT_CLR = "#112233";
 const BLACK_CLR = "#000000";
 
-const OVERLAY_CLR = "#00000080";
+const OVERLAY_CLR = "#292e3dff";
 
 const RED_CLR = "#FF5555";
 const GREEN_CLR = "#00FF99";
@@ -21,7 +21,7 @@ const ORANGE_CLR = "#FFAA44";
 const CYAN_CLR = "#66FFFF";
 const PINK_CLR = "#FF66FF";
 const YELLOW_CLR = "#FFFF66";
-const BG_CLR = "#303535";
+const BG_CLR = "#292e3dff";
 
 const gameCanvas = document.getElementById("gameCanvas");
 const gCtx = gameCanvas.getContext("2d");
@@ -64,7 +64,7 @@ function renderMainTable() {
     if(activePiece == undefined) return;
 
     //render the active piece's shadow
-    let currColor = getColor(activePiece.type) + "70";//half opacity
+    let currColor = getColor(activePiece.type) + "40";//half opacity
     const copyObj = activePiece.getDroppedObj();
     for(let i = 0; i < 4; i++) {
         const block = copyObj.blocks[i];
@@ -134,7 +134,7 @@ function drawOpponent(startX, startY, table) {
 }
 
 function drawOpponentText(x, y, text) {
-    oCtx.font = "15px Arial";
+    oCtx.font = "24px Press Start 2P";
     oCtx.textAlign = "center";
     oCtx.fillStyle = TEXT_CLR;
     oCtx.fillText(text, x, y);
