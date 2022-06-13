@@ -19,7 +19,7 @@ if(oppCanvas.width != oppCanvas.clientWidth) {
     oppCanvas.width = oppCanvas.clientWidth;
 }
 
-//start game loop
+//bat dau vong lap cua game
 setInterval(updateGame, 1000 / 60);
 
 //Cai nay de hien thi giao dien ne ^^
