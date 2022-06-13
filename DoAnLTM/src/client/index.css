@@ -56,6 +56,7 @@ html,body {
     display: none;
 }
 
+/*Tieu de cua game, dinh dang chu 'Multris'*/
 .title {
     width: 300px;
     height: 100px;
@@ -63,7 +64,7 @@ html,body {
     padding: 0px;
     text-align: center;
     font-family: 'Press Start 2P', cursive;
-    font-size: 60px;
+    font-size: 40px;
     color: #00FF99;
 }
 

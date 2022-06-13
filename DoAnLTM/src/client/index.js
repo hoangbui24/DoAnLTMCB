@@ -13,7 +13,7 @@ initInput();
 initNetworking();
 initUI();
 
-//correct the opponent canvas if necessary
+//Dieu chinh khung doi thu neu can thiet
 const oppCanvas = document.getElementById("opponentCanvas");
 if(oppCanvas.width != oppCanvas.clientWidth) {
     oppCanvas.width = oppCanvas.clientWidth;

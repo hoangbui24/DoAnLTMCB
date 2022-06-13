@@ -17,7 +17,7 @@ const AUTO_DROP_INTERVAL = 1000;
 let randNumGen;
 
 export const State = {
-    // Trang thai cua phong cho (co bao nhieu nguoi tham gia, bat dau, dang choi, thang, thua,...)
+    // Khoi tao va gan gia tri cho game theo so lan luot duoi day
     JOIN: 1,
     START: 2,
     PLAYING: 3,
