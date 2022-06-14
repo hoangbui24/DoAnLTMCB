@@ -9,10 +9,13 @@ export const S_SIZE = 13;//small square side length
 
 const SIDEBAR_BG_CLR = "#292e3dff";
 const OPPONENT_BG_CLR = "#292e3dff";
-const TEXT_CLR = "#112233";
-const BLACK_CLR = "#000000";
+// const SIDEBAR_BG_CLR = "#FAF0D7";
+// const OPPONENT_BG_CLR = "#FAF0D7";
+const TEXT_CLR = "#fff";
+const BLACK_CLR = "#fff";
 
 const OVERLAY_CLR = "#292e3dff";
+// const OVERLAY_CLR = "#FAF0D7";
 
 const RED_CLR = "#FF5555";
 const GREEN_CLR = "#00FF99";
@@ -22,6 +25,7 @@ const CYAN_CLR = "#66FFFF";
 const PINK_CLR = "#FF66FF";
 const YELLOW_CLR = "#FFFF66";
 const BG_CLR = "#292e3dff";
+// const BG_CLR = "#FAF0D7"
 
 const gameCanvas = document.getElementById("gameCanvas");
 const gCtx = gameCanvas.getContext("2d");
@@ -64,7 +68,7 @@ function renderMainTable() {
     if(activePiece == undefined) return;
 
     //render the active piece's shadow
-    let currColor = getColor(activePiece.type) + "40";//half opacity
+    let currColor = getColor(activePiece.type) + "70";//half opacity
     const copyObj = activePiece.getDroppedObj();
     for(let i = 0; i < 4; i++) {
         const block = copyObj.blocks[i];

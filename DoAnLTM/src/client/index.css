@@ -2,7 +2,8 @@ html,body {
     width: 100%;
     height: 100%;
     margin: 0px;
-    background: #292e3dff;
+    background: #292e3dff; 
+    /* background: #FAF0D7; */
 }
 
 #container {
@@ -24,7 +25,7 @@ html,body {
 
 .noshrink {
     flex-shrink: 0;
-    scale: 0.8;
+    scale: 0.85;
 }
 
 #reservedCanvas {
@@ -32,7 +33,7 @@ html,body {
     height: 140px;
     margin-right: 10px;
     background: #7d1399;
-    border: 6px solid #ef5c44ff;
+    border: 8px solid #f2b84cff;
 }
 
 #gameContainer {
@@ -40,7 +41,7 @@ html,body {
     height: 600px;
     margin-right: 10px;
     background: #7d1399;
-    border: 6px solid #387995ff;
+    border: 10px solid #33bf4bff;
     opacity: 100%;
     margin: 1px;
     scale: 0.8;
@@ -56,6 +57,7 @@ html,body {
 
 .overlay {
     background: #292e3dff;
+    /* background: #FAF0D7; */
 }
 
 .invisible {
@@ -79,7 +81,7 @@ html,body {
     height: 30px;
     margin: 155px 75px 0px 75px;
     padding: 0px;
-    border: 3px solid #f2b84cff;
+    border: 3px solid rgb(150, 98, 2);
     text-align: center;
     font-size: 20px;
     background: #f2b84cff;
@@ -148,23 +150,24 @@ html,body {
     height: 600px;
     margin-right: 10px;
     background: #292e3dff;
-    border: 6px solid #f2b84cff;
+    /* background: #FAF0D7; */
+    border: 10px solid #41a9adff;
 }
 
 #opponentCanvas {
     max-width: 600px;
     height: 600px;
     background: #123;
-    border: 6px solid #33bf4bff;
+    border: 10px solid #ef5c44ff;
     transition: all 0.25s;
 }
 
 .name {
     text-align: center;
-    font-size: larger;
+    font-size: large;
     font-family: 'Press Start 2P', cursive;
     color: #ffc31a;
-    width: 100%;
+    width: 70%;
     height: auto;
     position: absolute;
     top: 10px;
@@ -190,12 +193,13 @@ html,body {
 
 .item1 {
     position: absolute;
-    width: 40px;
-    height: 40px;
-    border: 8px solid #ef5c44ff;
+    width: 30px;
+    height: 30px;
+    border: 10px solid #33bf33;
     right: 10%;
     bottom: 40%;
     animation: spin 10s linear infinite;
+    scale: 0.5;
 }
 @keyframes spin {
     0% {
@@ -210,11 +214,12 @@ html,body {
   position: absolute;
   left: 90px;
   bottom: 20%;
-  width: 40px;
+  width: 30px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   animation: topBounce 3s ease-in-out infinite;
+  scale: 0.5;
 }
 @keyframes topBounce{
   0%,100%{
@@ -225,21 +230,22 @@ html,body {
   }
 }
 .item2 div{
-  height: 8px;
-  width: 8px;
+  height: 4px;
+  width: 4px;
   background-color: #f2b84cff;
   margin: 0 3px 8px;
 }
 
 .item3 {
     position: absolute;
-    height: 60px;
-    width: 60px;
-    border: 8px solid #33bf4bff;
+    height: 40px;
+    width: 40px;
+    border: 8px solid #ef5c44ff;
     border-radius: 50%;
     left: 10%;
     top: 90px;
     animation: leftBounce 3s ease-in-out infinite;
+    scale: 0.5;
 }
 @keyframes leftBounce{
   0%,100%{
@@ -257,6 +263,7 @@ html,body {
     left: 15%;
     top: 40%;
     animation: spin 15s linear infinite;
+    scale: 0.5;
 }
 .item4:before {
     content: '';
@@ -269,20 +276,59 @@ html,body {
 }
 
 .item5 {
+    position: absolute;
     height: 50px;
     width: 50px;
-    left: 20%;
-    bottom: 30%;
-    display: flex;
-    justify-content: space-between;
-    border-radius: 50%;
-    overflow: hidden;
-    animation: spin 5s linear infinite; 
+    right: 0%;
+    top: 20%;
+    background-color: #41a9adff;
 }
-.item div {
-    width: 1px;
-    background-color: red;
+
+.item6 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 0%;
+    top: 25%;
+    background-color: #387995ff;
 }
+
+.item7 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 0%;
+    top: 30%;
+    background-color: #33bf4bff;
+}
+
+.item8 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 0%;
+    top: 35%;
+    background-color: #f2b84cff;
+}
+
+.item9 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 0%;
+    top: 40%;
+    background-color: #ef5c44ff;
+}
+
+.item10 {
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 0%;
+    top: 45%;
+    background-color: #A91079;
+}
+
 
 
 
