@@ -34,11 +34,7 @@ export function updateInput() {
 class Key {
     constructor(delay = 200) {
         this.pressed = false;
-        //timeout is the last time (in unix time (ms)) that
-        //query returned true
         this.timeout = 0;
-        //delay is how long before the key's action should be
-        //performed again. Default delay is 200 ms.
         this.delay = delay;
     }
 
@@ -48,21 +44,19 @@ class Key {
         if(!val) this.timeout = 0;
     }
 
-    //check to see if the key's action should be processed
-    //it depends on whether or not the key is actually down,
-    //as well as other rules that have to do with the key's "delay"
+    // Kiem tra xem key co thuc su duoc bam chua, dua vao keydown
     query() {
         if(!this.pressed) return false;
 
         if(this.timeout == 0) {
-            //first time keypress is being handled
+            
             this.timeout = new Date().getTime();
             return true;
         } else if(new Date().getTime() - this.timeout >= this.delay) {
-            //after initial delay -- always return true
+            
             return true;
         } else {
-            //must be in key delay period -- return false
+            
             return false;
         }
     }

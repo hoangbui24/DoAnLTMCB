@@ -6,7 +6,7 @@ import { initInput } from "./input";
 import { initNetworking } from "./networking";
 import { initUI } from "./ui";
 
-//init sequence
+//Khoi tao
 getImages();
 initTable();
 initInput();

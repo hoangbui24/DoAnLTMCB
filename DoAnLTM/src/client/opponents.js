@@ -1,4 +1,4 @@
-//handles storage and updating of the opponent boards
+//Xu ly luu tru va update bang doi thu
 
 import { updateOpponentWidth } from "./ui";
 
@@ -23,7 +23,6 @@ export function playerUpdate(player) {
     console.log("update from " + player.name);
 }
 
-//returns an iterator for the tables (not an array)
 export function getOpponentTables() {
     return opponents.values();
 }

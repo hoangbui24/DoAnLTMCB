@@ -39,7 +39,6 @@ const uCtx = upcomingCanvas.getContext("2d");
 const opponentCanvas = document.getElementById("opponentCanvas");
 const oCtx = opponentCanvas.getContext("2d");
 
-//index 0 is never used
 const images = [undefined];
 
 export function getImages() {
@@ -60,22 +59,22 @@ function renderMainTable() {
     const table = getTable();
     for(let x = 0; x < 10; x++) {
         for(let y = 0; y < 20; y++) {
-            //add each block with its corresponding color
+            //Them block voi mau da duoc thiet lap
             drawBlock(gCtx, x, y, F_SIZE, getColor(table[x][y]));
         }
     }
 
     if(activePiece == undefined) return;
 
-    //render the active piece's shadow
-    let currColor = getColor(activePiece.type) + "70";//half opacity
+    //xu ly shadow cua khoi tetro
+    let currColor = getColor(activePiece.type) + "70";  //Opacity
     const copyObj = activePiece.getDroppedObj();
     for(let i = 0; i < 4; i++) {
         const block = copyObj.blocks[i];
         drawBlock(gCtx, block.x, block.y, F_SIZE, currColor);
     }
 
-    //render the active piece
+    //Xu ly khoi tetro
     currColor = getColor(activePiece.type);
     for(let i = 0; i < 4; i++) {
         const block = activePiece.blocks[i];
@@ -84,7 +83,7 @@ function renderMainTable() {
 }
 
 function renderSideBars() {
-    //render the reserved piece
+    //Xu ly khoi duoc bao quan
     rCtx.fillStyle = SIDEBAR_BG_CLR;
     rCtx.fillRect(0, 0, 140, 140);
     if(reservedPieceType != -1) {
@@ -93,7 +92,7 @@ function renderSideBars() {
 
     if(upcomingTypes.length != 5) return;
 
-    //render the upcoming pieces
+    //Xu ly cac khoi sap toi
     uCtx.fillStyle = SIDEBAR_BG_CLR;
     uCtx.fillRect(0, 0, 140, 600);
     for(let n = 0; n < 5; n++) {
@@ -109,12 +108,12 @@ function renderOpponents() {
     let oppNum = 0;
 
     for(const opponent of opponentIt) {
-        //margin of 10px between each opponent screen
+        //Can le 10px voi moi opponent
         const x = Math.floor(oppNum / 2) * (S_SIZE * 10 + 10) + 10;
         const y = (oppNum % 2) * 290 + 10;//just two rows
         drawOpponent(x, y, opponent.data);
 
-        // add a dark overlay if this opponent isn't currently playing
+        // Them mot lop mau den neu nhu nguoi choi do khong hoat dong
         if(opponent.currState != State.PLAYING) {
             oCtx.fillStyle = OVERLAY_CLR;
             oCtx.fillRect(x, y, 10 * S_SIZE, 20 * S_SIZE);
@@ -144,15 +143,15 @@ function drawOpponentText(x, y, text) {
     oCtx.fillText(text, x, y);
 }
 
-//x and y are the grid coordinates (not canvas coordinates)
-//xOff and yOff are the offsets of the entire grid
+//  x va y la toa do tren grid
+//xOff va yOff la offset cua x va y tren toan bo grid 
 function drawBlock(ctx, x, y, size, color, xOff = 0, yOff = 0) {
     ctx.strokeStyle = BLACK_CLR;
     ctx.fillStyle = color;
     ctx.fillRect(x * size + xOff, y * size + yOff, size, size);
     ctx.strokeRect(x * size + xOff, y * size + yOff, size, size);
 
-    // block shading
+    // Bong cua tetro
     if(color != "#303535") {
         ctx.fillStyle = "#00000080";
         ctx.fillRect(x * size + xOff, y * size + yOff + size*5/6, size, size*1/6);
@@ -165,9 +164,6 @@ function drawBlock(ctx, x, y, size, color, xOff = 0, yOff = 0) {
 }
 
 function getColor(type) {
-    /* NOTE: color strings must be in full 6-digit form.
-     * This is so the shadow pieces can be drawn with a new
-     * opacity appended onto the strings */
     if(type == 1) return GREEN_CLR;
     if(type == 2) return RED_CLR;
     if(type == 3) return BLUE_CLR;

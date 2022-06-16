@@ -86,7 +86,6 @@ function checkTable() {
         }
 
         if(isFullRow) {
-            //must clear this line
             clearLine(y);
         }
     }
@@ -134,7 +133,7 @@ class ActivePiece {
         this.autoMoveUp();
     }
 
-    //direction: 1 = to the right, -1 = to the left
+    //dinh huong: 1 thi di qua phai, -1 thi di qua trai
     forceMoveSideways(direction) {
         for(let i = 0; i < 4; i++) {
             this.blocks[i].x += direction;
@@ -142,7 +141,7 @@ class ActivePiece {
         this.pivot.x += direction;
     }
 
-    //does not move the piece if something is in the way
+    //Khong di chuyen cac khoi neu co vat can o truoc
     moveSideways(direction) {
         for(let i = 0; i < 4; i++) {
             let newPos = this.blocks[i].x + direction;
@@ -154,10 +153,10 @@ class ActivePiece {
         this.forceMoveSideways(direction);
     }
 
-    //move the piece up until it is not colliding with any blocks
+    //Di chuyen khoi tetro len cho toi khi no khong dung cham
     autoMoveUp() {
         while(true) {
-            //make sure the piece isn't "clear" of any blocks
+            //Dam bao rang cac khoi nay khong clear 1 row nao
             let clear = true;
             for(let i = 0; i < 4; i++) {
                 if(table[this.blocks[i].x][this.blocks[i].y] != 0 &&
@@ -168,7 +167,7 @@ class ActivePiece {
             }
             if(clear) return;
 
-            //move the piece up one and repeat
+            //Di chuyen khoi tetro len va lap lai
             for(let i = 0; i < 4; i++) {
                 this.blocks[i].y--;
             }
@@ -176,7 +175,7 @@ class ActivePiece {
         }
     }
 
-    //rotates the piece depending on its pivot and restrictions
+    //XOay khoi tetro dua vao vi tri hien tai
     rotate() {
         let centerX = this.pivot.x;
         let centerY = this.pivot.y;
@@ -188,7 +187,7 @@ class ActivePiece {
             this.blocks[i].y = Math.floor(centerY + (tmp - centerX) * this.direction);
         }
 
-        //move the piece in bounds, if necessary
+        //DI chuyen khoi tetro sang 2 ben neu can thiet
         for(let i = 0; i < 4; i++) {
             if(this.blocks[i].x < 0) {
                 this.forceMoveSideways(-this.blocks[i].x);
@@ -203,16 +202,16 @@ class ActivePiece {
         if(this.pivot.limit && this.turns == -1) this.direction = 1;
     }
 
-    //tries to move the piece one space downwards
-    //returns true if the piece successfully moved down
-    //returns false if something blocked the piece from moving
+    //Luon di chuyen khoi tetro xuong duoi
+    //Tra ve true neu khoi tetro di xuong thanh cong
+    //Tra va false neu co gi do can duong
     moveDown() {
         for(let i = 0; i < 4; i++) {
             let newPos = this.blocks[i].y + 1;
             if(newPos < 0) {
                 continue;
             } else if(newPos == 20 || table[this.blocks[i].x][newPos] != 0) {
-                //block below is either past the bottom or occupied
+                //Kiem tra xem khoi tetro o duoi da duoc in place hay chua
                 return false;
             }
         }
@@ -222,12 +221,12 @@ class ActivePiece {
         }
         this.pivot.y++;
         
-        //reset the auto drop interval
+        //Thiet lap lai auto drop
         this.lastDropTime = new Date().getTime();
         return true;
     }
 
-    //same thing as moveDown(), but automatically finalizes the piece if needed
+    
     drop() {
         if(!this.moveDown()) {
             this.finalize();
@@ -237,20 +236,18 @@ class ActivePiece {
         return true;
     }
 
-    //drop the piece as far down as possible
+    //Roi khoi tetro xa nhat co the
     dropFull() {
-        //this will also automatically generate the new piece
-        //by calling finalize
+        //Viec nay se tu dong tao mot khoi tetro moi y chang khoi tetro dang active
         while(this.drop()) {}
     }
 
-    //return a new Active Piece object that has been dropped all the way down
-    //used for rendering the shadow piece in the game
+    // Ham tra ve mot khoi tetro nam o cuoi cung cua column, dung de xu ly khoi ghóst piece
     getDroppedObj() {
         let newObj = new ActivePiece(this.type);
         newObj.blocks = [];
         for(let i = 0; i < 4; i++) {
-            //copy coordinate object
+            //copy toa do cua doi tuong
             newObj.blocks.push(Object.assign({}, this.blocks[i]));
         }
 
@@ -258,8 +255,7 @@ class ActivePiece {
         return newObj;
     }
 
-    //set the current active piece into place
-    //and generates a new active piece
+    //Dat khoi tetro hien tai vao vi tri, sau do tao mot khoi moi
     finalize() {
         for(let i = 0; i < 4; i++) {
             let x = this.blocks[i].x;
@@ -274,7 +270,7 @@ class ActivePiece {
 
         activePiece = new ActivePiece(getNextPiece());
 
-        //send update of table to server
+        //Gui update table cho server
         sendUpdate();
     }
 
@@ -349,4 +345,3 @@ function getPivot(type) {
 }
 
 
-//Lol, Duc Hoang met moi qua :((

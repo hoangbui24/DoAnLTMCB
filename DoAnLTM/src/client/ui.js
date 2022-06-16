@@ -112,6 +112,6 @@ export function handleEnterPress() {
 export function updateOpponentWidth() {
     let cols = Math.ceil(getNumOpponents() / 2);
     cols = Math.max(cols, 1);
-    //console.log(cols + " " + getNumOpponents());
+    console.log(cols + " " + getNumOpponents());
     opponentCanvas.width = (10 + cols * (S_SIZE * 10 + 10));
 }
